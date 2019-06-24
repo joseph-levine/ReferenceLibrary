@@ -1,0 +1,8 @@
+#!/bin/sh
+
+for color in $(seq 30 37)
+do
+    echo "\\\033[${color}m : \033[${color}mtest\033[0m"
+done
+
+echo "\\\033[0m to reset"
