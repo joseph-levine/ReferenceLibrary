@@ -1,0 +1,5 @@
+#!/bin/sh
+
+echo 'while IFS= read -r line; do'
+echo '    echo "$line"'
+echo 'done < my_file'
