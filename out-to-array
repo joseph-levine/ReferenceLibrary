@@ -1,0 +1,4 @@
+#!/bin/sh
+# newline keeps being evaluated as an actual newline, but if it's in a var, it's okay
+nl='\\n'
+echo "IFS='\$${nl}' my_var=(\$( command ))"
