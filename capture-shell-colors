@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo 'run script, then the command, then exit'
+echo 'next, sed the file (make sure to use the real control characters'
+if command -v bat > /dev/null 2>&1; then
+    p() { echo "$1" | bat --language bash; }
+else
+    p() { echo "$1"; }
+fi
+p "sed -i '' 's/^[/\\033/g' typescript"
+p "sed -i '' 's/^G/\\033/g' typescript"
+p "sed -i '' 's/^M/\\033/g' typescript"

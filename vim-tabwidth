@@ -1,0 +1,11 @@
+#!/bin/sh
+
+text=':set expandtab
+:set shiftwidth=4
+:set tabstop=4'
+
+if type bat >/dev/null 2>&1; then
+    echo "$text" | bat --language=vim --style=snip
+else
+    echo "$text"
+fi

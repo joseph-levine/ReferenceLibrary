@@ -1,0 +1,3 @@
+#!/bin/sh
+
+echo 'echo -n -e "\\033]0;TITLE\\007"'

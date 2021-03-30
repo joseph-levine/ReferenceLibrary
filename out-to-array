@@ -1,5 +1,11 @@
 #!/bin/sh
-# newline keeps being evaluated as an actual newline, but if it's in a var, it's okay
-echo 'in zsh, just wrap in parenthesis'
 # shellcheck disable=SC2016
-echo 'my_var=($( command ))'
+
+echo 'in zsh, just wrap in parenthesis'
+if command -v bat > /dev/null 2>&1; then
+    echo 'my_var=($( command ))' | bat --language bash
+else
+    echo 'my_var=($( command ))'
+fi
+echo ''
+echo 'if tabs, spaces or nulls are in the string, set $IFS to newline'

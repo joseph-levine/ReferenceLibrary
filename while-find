@@ -7,6 +7,6 @@ else
     p() { echo "$1"; }
 fi
 
-p 'while IFS= read -r line; do'
-p '    echo "$line"'
-p 'done < my_file'
+p 'find . -name "foo" | while read -r filename; do'
+p '    echo $filename'
+p 'done'

@@ -1,0 +1,10 @@
+#!/bin/sh
+
+
+if command -v bat > /dev/null 2>&1; then
+    p() { echo "$1" | bat --language python; }
+else
+    p() { echo "$1"; }
+fi
+p "import rlcompleter, readline"
+p "readline.parse_and_bind('tab:complete')"

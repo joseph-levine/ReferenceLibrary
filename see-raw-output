@@ -1,0 +1,9 @@
+#!/bin/sh
+# shellcheck disable=SC2016
+
+echo 'pipe to od (octal dump)'
+if command -v bat > /dev/null 2>&1; then
+    echo 'print $var | od -a' | bat --language bash
+else
+    echo 'print $var | od -a'
+fi
